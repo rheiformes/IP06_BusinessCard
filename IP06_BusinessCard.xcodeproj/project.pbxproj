@@ -13,6 +13,8 @@
 		2263E65B28FF074700BBC551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2263E65928FF074700BBC551 /* Main.storyboard */; };
 		2263E65D28FF074800BBC551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2263E65C28FF074800BBC551 /* Assets.xcassets */; };
 		2263E66028FF074800BBC551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2263E65E28FF074800BBC551 /* LaunchScreen.storyboard */; };
+		2263E66828FF083E00BBC551 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263E66728FF083E00BBC551 /* Person.swift */; };
+		2263E66A28FF112100BBC551 /* rhea.png in Resources */ = {isa = PBXBuildFile; fileRef = 2263E66928FF112100BBC551 /* rhea.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2263E65C28FF074800BBC551 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2263E65F28FF074800BBC551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2263E66128FF074800BBC551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2263E66728FF083E00BBC551 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		2263E66928FF112100BBC551 /* rhea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rhea.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				2263E65C28FF074800BBC551 /* Assets.xcassets */,
 				2263E65E28FF074800BBC551 /* LaunchScreen.storyboard */,
 				2263E66128FF074800BBC551 /* Info.plist */,
+				2263E66728FF083E00BBC551 /* Person.swift */,
+				2263E66928FF112100BBC551 /* rhea.png */,
 			);
 			path = IP06_BusinessCard;
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 				2263E66028FF074800BBC551 /* LaunchScreen.storyboard in Resources */,
 				2263E65D28FF074800BBC551 /* Assets.xcassets in Resources */,
 				2263E65B28FF074700BBC551 /* Main.storyboard in Resources */,
+				2263E66A28FF112100BBC551 /* rhea.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +147,7 @@
 			files = (
 				2263E65828FF074700BBC551 /* ViewController.swift in Sources */,
 				2263E65428FF074700BBC551 /* AppDelegate.swift in Sources */,
+				2263E66828FF083E00BBC551 /* Person.swift in Sources */,
 				2263E65628FF074700BBC551 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
