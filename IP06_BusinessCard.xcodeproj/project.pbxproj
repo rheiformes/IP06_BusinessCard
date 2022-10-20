@@ -15,6 +15,8 @@
 		2263E66028FF074800BBC551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2263E65E28FF074800BBC551 /* LaunchScreen.storyboard */; };
 		2263E66828FF083E00BBC551 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263E66728FF083E00BBC551 /* Person.swift */; };
 		2263E66A28FF112100BBC551 /* rhea.png in Resources */ = {isa = PBXBuildFile; fileRef = 2263E66928FF112100BBC551 /* rhea.png */; };
+		229501162901B7D800BF2F2D /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 229501152901B7D800BF2F2D /* sun.png */; };
+		229501182901B7FE00BF2F2D /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 229501172901B7FD00BF2F2D /* moon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		2263E66128FF074800BBC551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2263E66728FF083E00BBC551 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		2263E66928FF112100BBC551 /* rhea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rhea.png; sourceTree = "<group>"; };
+		229501152901B7D800BF2F2D /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun.png; path = ../../../../Downloads/sun.png; sourceTree = "<group>"; };
+		229501172901B7FD00BF2F2D /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moon.png; path = ../../../../Downloads/moon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				2263E66128FF074800BBC551 /* Info.plist */,
 				2263E66728FF083E00BBC551 /* Person.swift */,
 				2263E66928FF112100BBC551 /* rhea.png */,
+				229501152901B7D800BF2F2D /* sun.png */,
+				229501172901B7FD00BF2F2D /* moon.png */,
 			);
 			path = IP06_BusinessCard;
 			sourceTree = "<group>";
@@ -133,6 +139,8 @@
 			files = (
 				2263E66028FF074800BBC551 /* LaunchScreen.storyboard in Resources */,
 				2263E65D28FF074800BBC551 /* Assets.xcassets in Resources */,
+				229501182901B7FE00BF2F2D /* moon.png in Resources */,
+				229501162901B7D800BF2F2D /* sun.png in Resources */,
 				2263E65B28FF074700BBC551 /* Main.storyboard in Resources */,
 				2263E66A28FF112100BBC551 /* rhea.png in Resources */,
 			);
