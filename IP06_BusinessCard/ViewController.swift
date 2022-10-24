@@ -9,9 +9,10 @@
 
 
 import UIKit
+import MessageUI
+import Contacts
 
 class ViewController: UIViewController {
-
     
     //screen values/constants
     var screenWidth: Int = 0
@@ -47,27 +48,69 @@ class ViewController: UIViewController {
         
         //set up default screen constants
         let screenBounds: CGRect = UIScreen.main.bounds
-        screenWidth = Int(screenBounds.width)
-        screenHeight = Int(screenBounds.height)
+        self.screenWidth = Int(screenBounds.width)
+        self.screenHeight = Int(screenBounds.height)
         
         
         //declare values of personas
-        personByDay = Person(firstName: "Rhea", LastName: "Rai", role: "Senior at LTHS", phone: "+1 123-456-7890", email: "rhea.rai.474@k12.friscoisd.org", imageName: "rhea.png") //TODO: fix the pngs
-        personByNight = Person(firstName: "Friendly Neighborhood", LastName: "Spiderman", role: "NYC Superhero", phone: "+1 987-654-3210", email: "spiderman@avengers.com", imageName: "rhea.png")
-        currPerson = personByDay!
+        self.personByDay = Person(firstName: "Rhea", LastName: "Rai", role: "Senior at LTHS", phone: "4696400634", email: "rhea.rai.474@k12.friscoisd.org", imageName: "rhea.png") //TODO: fix the pngs
+        self.personByNight = Person(firstName: "Friendly Neighborhood", LastName: "Spiderman", role: "NYC Superhero", phone: "4696400634", email: "spiderman@avengers.com", imageName: "rhea.png")
+        self.currPerson = personByDay!
+        
         //set up frames/settings
-        setUI()
+        self.setUI()
         
         //set alter ego switch
-        switchPerson.frame = CGRect(x: screenWidth/2 - 10, y: Int(phoneButton.frame.maxY) + 20, width: 10, height: 10)
-        switchPerson.addTarget(self, action: #selector(changePersona), for: .valueChanged)
-        switchPerson.setOn(false, animated: false)
-        switchPerson.backgroundColor = currButtonTextColor
-        switchPerson.tintColor = currButtonTextColor
-        switchPerson.layer.cornerRadius = 16.0
+        self.switchPerson.frame = CGRect(x: screenWidth/2 - 10, y: Int(phoneButton.frame.maxY) + 20, width: 10, height: 10)
+        self.switchPerson.addTarget(self, action: #selector(changePersona), for: .valueChanged)
+        self.switchPerson.setOn(false, animated: false)
+        self.switchPerson.backgroundColor = currButtonTextColor
+        self.switchPerson.tintColor = currButtonTextColor
+        self.switchPerson.layer.cornerRadius = 16.0
         view.addSubview(switchPerson)
         
     }
+    
+    //call phone number function, sourced from https://developer.apple.com/forums/thread/87997
+    @objc func callPhone() {
+        let phoneNumber: String = currPerson!.phone
+        if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
+            }
+          }
+    }
+    
+    //CNMutableContact documentation: https://developer.apple.com/documentation/contacts
+    @objc func addContact() {
+        let contact = CNMutableContact()
+        contact.imageData = (personImgView.image)?.jpegData(compressionQuality: 1.0)
+        contact.givenName = currPerson!.firstName
+        contact.familyName = currPerson!.LastName
+        
+        
+        let workEmail = CNLabeledValue(label: CNLabelHome, value: currPerson!.email as NSString)
+        contact.emailAddresses = [workEmail]
+        
+        contact.phoneNumbers = [CNLabeledValue(
+            label: CNLabelPhoneNumberiPhone,
+            value: CNPhoneNumber(stringValue: currPerson!.phone))]
+        
+        
+        // Save the newly created contact.
+        let store = CNContactStore()
+        let saveRequest = CNSaveRequest()
+        saveRequest.add(contact, toContainerWithIdentifier: nil)
+
+        do {
+            try store.execute(saveRequest)
+        } catch {
+            print("Saving contact failed, error: \(error)")
+            // Handle the error.
+        }
+    }
+    
     
     @objc func pressContactPrompt() {
         showContact = !showContact
@@ -106,16 +149,6 @@ class ViewController: UIViewController {
         switchPerson.layer.cornerRadius = 16.0
     }
     
-//    func updateUIColor() {
-//        personImgView.layer.borderColor = currTextColor.cgColor
-//        nameLbl.textColor = currTextColor
-//        roleLbl.textColor = currTextColor
-//        contactShowButton.setTitleColor(currTextColor, for: .normal)
-//        emailButton.setTitleColor(currButtonTextColor, for: .normal)
-//        emailButton.backgroundColor = currTextColor
-//        phoneButton.setTitleColor(currButtonTextColor, for: .normal)
-//        phoneButton.backgroundColor = currTextColor
-//    }
     
     func setUI() {
         //background
@@ -173,6 +206,7 @@ class ViewController: UIViewController {
         emailButton.frame = CGRect(x: 3*xBuffer, y: Int(contactShowButton.frame.maxY) + 20, width: screenWidth - 6*xBuffer, height: Int(contactShowButton.frame.height))
         emailButton.layer.cornerRadius = emailButton.frame.height/2
         emailButton.titleLabel?.font = UIFont(name: "Courier", size: 15)
+        emailButton.addTarget(self, action: #selector(addContact), for: .touchUpInside)
         
         //phone button
         phoneButton.setTitle(currPerson?.phone, for: .normal)
@@ -181,8 +215,11 @@ class ViewController: UIViewController {
         phoneButton.frame = CGRect(x: emailButton.frame.minX, y: emailButton.frame.maxY + 5, width: emailButton.frame.width, height: emailButton.frame.height)
         phoneButton.layer.cornerRadius = emailButton.frame.height/2
         phoneButton.titleLabel?.font = UIFont(name: "Courier", size: 15)
-        
+        phoneButton.addTarget(self, action: #selector(addContact), for: .touchUpInside)
+                              
     }
+    
+    
     
     
 
