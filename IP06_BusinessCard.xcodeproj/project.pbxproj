@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2205308C2906F5D0009DE5D2 /* rheaSpider.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2205308B2906F5D0009DE5D2 /* rheaSpider.jpg */; };
+		2205308E2906F6D9009DE5D2 /* spiderProfile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2205308D2906F6D9009DE5D2 /* spiderProfile.jpg */; };
+		220530902906FA1D009DE5D2 /* Rhea-Rai_Business-Card_demo.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2205308F2906FA1D009DE5D2 /* Rhea-Rai_Business-Card_demo.mov */; };
 		2263E65428FF074700BBC551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263E65328FF074700BBC551 /* AppDelegate.swift */; };
 		2263E65628FF074700BBC551 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263E65528FF074700BBC551 /* SceneDelegate.swift */; };
 		2263E65828FF074700BBC551 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263E65728FF074700BBC551 /* ViewController.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2205308B2906F5D0009DE5D2 /* rheaSpider.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rheaSpider.jpg; path = ../../../../Downloads/rheaSpider.jpg; sourceTree = "<group>"; };
+		2205308D2906F6D9009DE5D2 /* spiderProfile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = spiderProfile.jpg; path = ../../../../Downloads/spiderProfile.jpg; sourceTree = "<group>"; };
+		2205308F2906FA1D009DE5D2 /* Rhea-Rai_Business-Card_demo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "Rhea-Rai_Business-Card_demo.mov"; path = "../../../Projects/Project Recordings/Rhea-Rai_Business-Card_demo.mov"; sourceTree = "<group>"; };
 		2263E65028FF074700BBC551 /* IP06_BusinessCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IP06_BusinessCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2263E65328FF074700BBC551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2263E65528FF074700BBC551 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +81,9 @@
 				2263E66928FF112100BBC551 /* rhea.png */,
 				229501152901B7D800BF2F2D /* sun.png */,
 				229501172901B7FD00BF2F2D /* moon.png */,
+				2205308B2906F5D0009DE5D2 /* rheaSpider.jpg */,
+				2205308D2906F6D9009DE5D2 /* spiderProfile.jpg */,
+				2205308F2906FA1D009DE5D2 /* Rhea-Rai_Business-Card_demo.mov */,
 			);
 			path = IP06_BusinessCard;
 			sourceTree = "<group>";
@@ -140,7 +149,10 @@
 				2263E66028FF074800BBC551 /* LaunchScreen.storyboard in Resources */,
 				2263E65D28FF074800BBC551 /* Assets.xcassets in Resources */,
 				229501182901B7FE00BF2F2D /* moon.png in Resources */,
+				2205308C2906F5D0009DE5D2 /* rheaSpider.jpg in Resources */,
 				229501162901B7D800BF2F2D /* sun.png in Resources */,
+				220530902906FA1D009DE5D2 /* Rhea-Rai_Business-Card_demo.mov in Resources */,
+				2205308E2906F6D9009DE5D2 /* spiderProfile.jpg in Resources */,
 				2263E65B28FF074700BBC551 /* Main.storyboard in Resources */,
 				2263E66A28FF112100BBC551 /* rhea.png in Resources */,
 			);

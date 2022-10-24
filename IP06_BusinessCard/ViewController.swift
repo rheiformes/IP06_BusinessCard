@@ -53,8 +53,8 @@ class ViewController: UIViewController {
         
         
         //declare values of personas
-        self.personByDay = Person(firstName: "Rhea", LastName: "Rai", role: "Senior at LTHS", phone: "4696400634", email: "rhea.rai.474@k12.friscoisd.org", imageName: "rhea.png") //TODO: fix the pngs
-        self.personByNight = Person(firstName: "Friendly Neighborhood", LastName: "Spiderman", role: "NYC Superhero", phone: "4696400634", email: "spiderman@avengers.com", imageName: "rhea.png")
+        self.personByDay = Person(firstName: "Rhea", LastName: "Rai", role: "Senior at LTHS", phone: "4696400634", email: "rhea.rai.474@k12.friscoisd.org", imageName: "spiderProfile.jpg")
+        self.personByNight = Person(firstName: "Friendly Neighborhood", LastName: "Spiderman", role: "NYC Superhero", phone: "4696400634", email: "spiderman@avengers.com", imageName: "rheaSpider.jpg")
         self.currPerson = personByDay!
         
         //set up frames/settings
@@ -72,6 +72,7 @@ class ViewController: UIViewController {
     }
     
     //call phone number function, sourced from https://developer.apple.com/forums/thread/87997
+    //this doesn't work in simulator bc there's no phone plan, so I haven't put it into the target for the phone button 
     @objc func callPhone() {
         let phoneNumber: String = currPerson!.phone
         if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
@@ -111,7 +112,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    //function that controls showing contact
     @objc func pressContactPrompt() {
         showContact = !showContact
         if(!showContact) {
@@ -120,13 +121,14 @@ class ViewController: UIViewController {
             phoneButton.removeFromSuperview()
         }
         else {
-            contactShowButton.setTitle("Tap to hide contact info...", for: .normal)
+            contactShowButton.setTitle("Tap buttons to add contact.\nTap prompt to hide contact info...", for: .normal)
             view.addSubview(emailButton)
             view.addSubview(phoneButton)
         }
         
     }
     
+    //change to alter ego
     @objc func changePersona() {
         showDay = !showDay
         emailButton.removeFromSuperview()
@@ -193,6 +195,7 @@ class ViewController: UIViewController {
         
         //show contact prompt button
         contactShowButton.setTitle("Tap to show contact info...", for: .normal)
+        contactShowButton.titleLabel?.numberOfLines = 0
         contactShowButton.setTitleColor(currTextColor, for: .normal)
         contactShowButton.frame = CGRect(x: roleLbl.frame.minX, y: roleLbl.frame.maxY + 20, width: roleLbl.frame.width, height: roleLbl.frame.height)
         contactShowButton.titleLabel?.font = UIFont(name: "Courier", size: 15)
